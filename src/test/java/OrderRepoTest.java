@@ -12,9 +12,20 @@ public class OrderRepoTest {
 
     @Test
     public void isListOutputCorrect(){
-      OrderRepo orders = new OrderRepo();
-      orders.add();
-      List<Orders> = orders.list();
+
+        OrderRepo order_list = new OrderRepo();
+        List<Product> productList = new ArrayList<>();
+        Product product1 = new Product("Klopapier",6);
+        Product product2 = new Product("Eis",9);
+        productList.add(product1);
+        productList.add(product2);
+        Order order1 = new Order(1, productList);
+        order_list.add(order1);
+
+        String result = order_list.list();
+
+        Assertions.assertEquals("[Order(id=1, products=[Product{name='Klopapier', id=6}, Product{name='Eis', id=9}])]", result);
+
 
     }
 

@@ -21,4 +21,7 @@ public class OrderRepo {
     }
 
 
+    public String list() {
+        return orders.toString();
+    }
 }
