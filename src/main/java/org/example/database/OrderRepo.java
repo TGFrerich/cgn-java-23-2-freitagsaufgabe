@@ -1,8 +1,15 @@
 package org.example.database;
 import java.util.*;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.example.model.Order;
 import org.example.model.Product;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 
 public class OrderRepo {
     List<Order> orders = new ArrayList<>();
