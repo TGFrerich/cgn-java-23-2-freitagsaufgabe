@@ -22,7 +22,7 @@ public class OrderRepoTest {
         Order order1 = new Order(1, productList);
         order_list.add(order1);
 
-        String result = order_list.list();
+        String result = order_list.list().toString();
 
         Assertions.assertEquals("[Order(id=1, products=[Product{name='Klopapier', id=6}, Product{name='Eis', id=9}])]", result);
 
@@ -39,7 +39,7 @@ public class OrderRepoTest {
         productList.add(product1);
         Order order1 = new Order(1, productList);
         order_list.add(order1);
-        Optional<Order> result = order_list.get(1);
+        Optional<Order> result = order_list.getSingleOrder(1);
        // Order order_final = result.get();
         Assertions.assertEquals(order1, result.get());
 

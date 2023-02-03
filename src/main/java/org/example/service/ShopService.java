@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import org.example.database.OrderRepo;
 import org.example.database.ProductRepo;
 import org.example.model.Order;
-import org.example.model.Product;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -45,5 +44,13 @@ public class ShopService {
             return true;
         }
         return false;
+    }
+
+    public String getOrder(int id){
+        return bookings.getSingleOrder(id).get().toString();
+    }
+
+    public List<Order> listOrders(){
+        return bookings.list();
     }
 }

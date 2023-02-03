@@ -8,6 +8,7 @@ import org.junit.jupiter.api.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class ShopServiceTest {
 
@@ -59,6 +60,23 @@ public class ShopServiceTest {
     void addOrderTest_exceptedFalse(){
         boolean excepted = coolShop.addOrder(null);
         Assertions.assertFalse(excepted);
+    }
+
+    @Test
+    void getOrderTest_exceptedSingleOrder(){
+        String actual = coolShop.getOrder(3);
+        String excepted = order2.toString();
+
+        Assertions.assertEquals(excepted,actual);
+    }
+
+    @Test
+    void getOrderTest_exceptedListOfOrders(){
+        List<Order> actual = coolShop.listOrders();
+        List<Order>  excepted = allRequets.list();
+
+
+        Assertions.assertEquals(excepted,actual);
     }
 
 }
