@@ -5,8 +5,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.database.OrderRepo;
 import org.example.database.ProductRepo;
+import org.example.model.Order;
 import org.example.model.Product;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @Data
@@ -27,7 +29,21 @@ public class ShopService {
             return "Kein Produkt mit dieser ID";
         }
 
-
     }
 
+    public String listProducts() {
+        try {
+            return storage.listProducts();
+        }
+        catch (NoSuchElementException e){
+            return "Kein Produkt in dieser Liste";
+        }
+    }
+
+    public boolean addOrder(Order order){
+        if(bookings.add(order)){
+            return true;
+        }
+        return false;
+    }
 }

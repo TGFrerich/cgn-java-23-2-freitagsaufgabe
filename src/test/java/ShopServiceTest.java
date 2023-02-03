@@ -37,6 +37,28 @@ public class ShopServiceTest {
     void getProductTest_expectedSingleProduct(){
         String actual = coolShop.getProduct(6);
         String expected = productBase.getById(6).orElse(new Product()).toString();
+
         Assertions.assertEquals(expected,actual);
     }
+
+    @Test
+    void getProductTest_expectedListOfProduct(){
+        String actual = coolShop.listProducts();
+        String excepted = productList.toString();
+
+        Assertions.assertEquals(excepted,actual);
+    }
+
+    @Test
+    void addOrderTest_exceptedNewOrder(){
+        boolean excepted = coolShop.addOrder(order1);
+        Assertions.assertTrue(excepted);
+    }
+
+    @Test
+    void addOrderTest_exceptedFalse(){
+        boolean excepted = coolShop.addOrder(null);
+        Assertions.assertFalse(excepted);
+    }
+
 }

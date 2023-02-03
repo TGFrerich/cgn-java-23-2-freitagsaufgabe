@@ -14,8 +14,11 @@ import org.example.model.Product;
 public class OrderRepo {
     List<Order> orders = new ArrayList<>();
 
-    public void add(Order request){
-        orders.add(request);
+    public boolean add(Order request){
+        if(request != null){
+            return orders.add(request);
+        }
+        return false;
     }
 
     public Optional<Order> get(int id) {
