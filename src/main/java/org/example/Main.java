@@ -12,12 +12,11 @@ public class Main {
 
 
 
-        List<Product> liste = new ArrayList<>();
-        Product milch = new Product("Milch",1);
-        liste.add(milch);
-        ProductRepo milchliste = new ProductRepo(liste);
+//        List<Product> liste = new ArrayList<>();
+//        Product milch = new Product("Milch",1);
+//        liste.add(milch);
+//        ProductRepo milchliste = new ProductRepo(liste);
 
-        milchliste.list();
     }
 
 
